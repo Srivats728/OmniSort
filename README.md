@@ -12,11 +12,11 @@ Have you ever just stared at your download folder or your email inbox in pure ho
 *(CAD renders, schematics, and PCB layouts will be here once they are finished).*
 
 ## Hardware
-* **Brains:** Seeed XIAO RP2040 
+* **Microcontroller:** Seeed XIAO RP2040 
 * **Inputs:** 16x MX-Style Switches & 1x EC11 Rotary Encoder
 * **Display:** 0.91-inch OLED 
-* **Under Hood:** 16x 1N4148 Diodes (for 4x4 matrix) & 16x SK6812 MINI-E RGB LEDs
-* **Case:** Custom 3D-printed enclosure secured with M3 screws and heatset inserts
+* **Lighting:** 16x 1N4148 Diodes (for 4x4 matrix) & 16x SK6812 MINI-E RGB LEDs
+* **Case:** 3D printed enclosure secured with M3 screws and heatset inserts
 
 ## How It Works
 1. **Board:** Will use CircuitPython/KMK to handle switch matrix, track dial, and update OLED screen. 
