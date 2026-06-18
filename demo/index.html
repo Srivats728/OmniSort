@@ -5,14 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OmniSort PCB Demo Viewer</title>
     <style>
-        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #18181b; font-family: system-ui, sans-serif; }
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #18181b; font-family: system-ui, sans-serif; display: flex; flex-direction: column; }
+        
+        /* Interactive header banner */
+        .instruction-banner { 
+            background: #09090b; 
+            color: #f4f4f5; 
+            padding: 12px 20px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            border-bottom: 1px solid #27272a;
+            box-sizing: border-box;
+        }
+        .instruction-text { font-size: 0.95rem; font-weight: 500; }
+        .link-container { display: flex; gap: 8px; align-items: center; }
+        .url-box { background: #27272a; color: #a1a1aa; padding: 6px 12px; border-radius: 4px; font-family: monospace; font-size: 0.85rem; border: 1px solid #3f3f46; }
+        
+        /* Copy action button */
+        .copy-btn { background: #2563eb; color: #fff; border: none; padding: 6px 14px; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: background 0.2s; }
+        .copy-btn:hover { background: #1d4ed8; }
+
+        .viewer-box { flex-grow: 1; width: 100%; height: 100%; }
         iframe { width: 100%; height: 100%; border: none; }
     </style>
 </head>
 <body>
 
-    <!-- Uses KiCanvas's official secure gateway to route directly to your repository asset -->
-    <iframe src="https://kicanvas.org"></iframe>
+    <div class="instruction-banner">
+        <div class="instruction-text">
+            ℹ️ Paste in this link to view the PCB if it doesn't open automatically:
+        </div>
+        <div class="link-container">
+            <span class="url-box" id="pcbUrl">https://github.com</span>
+            <button class="copy-btn" onclick="copyLink()">Copy Link</button>
+        </div>
+    </div>
+
+    <div class="viewer-box">
+        <iframe src="https://kicanvas.org"></iframe>
+    </div>
+
+    <script>
+        function copyLink() {
+            const urlText = document.getElementById('pcbUrl').innerText;
+            navigator.clipboard.writeText(urlText).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                btn.innerText = 'Copied!';
+                btn.style.background = '#16a34a';
+                setTimeout(() => {
+                    btn.innerText = 'Copy Link';
+                    btn.style.background = '#2563eb';
+                }, 2000);
+            });
+        }
+    </script>
 
 </body>
 </html>
