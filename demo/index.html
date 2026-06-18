@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OmniSort Demo</title>
+    <!-- Pulls the external KiCanvas rendering engine -->
+    <script type="module" src="https://kicanvas.org"></script>
+    <style>
+        body { margin: 0; padding: 0; background: #18181b; font-family: system-ui, sans-serif; color: #f4f4f5; }
+        header { padding: 16px; background: #09090b; text-align: center; font-size: 1.1rem; border-bottom: 1px solid #27272a; }
+        .viewer-box { width: 100vw; height: calc(100vh - 60px); }
+        kicanvas-embed { width: 100%; height: 100%; --kicanvas-background: #18181b; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <strong>OmniSort PCB Layout</strong> (Seeed XIAO RP2040 Interactive Demo)
+    </header>
+
+    <div class="viewer-box">
+        <!-- Relative path exits the demo folder to grab the source pcb -->
+        <kicanvas-embed controls="full">
+            <kicanvas-source src="../OmniSort-Schematic/OmniSort-Schematic.kicad_pcb"></kicanvas-source>
+        </kicanvas-embed>
+    </div>
+
+</body>
+</html>
