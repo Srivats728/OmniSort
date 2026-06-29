@@ -19,5 +19,5 @@ Have you ever just stared at your download folder or your email inbox in pure ho
 * **Case:** 3D printed enclosure secured with M3 screws and heatset inserts
 
 ## How It Works
-1. **Board:** Will use CircuitPython/KMK to handle switch matrix, track dial, and update OLED screen. 
+1. **Board:** Will use KMK to handle switch matrix, track dial, and update OLED screen. 
 2. **Host:** A background Python script on PC will watch local folders and talking to email servers to route data whenever a switch is hit.
